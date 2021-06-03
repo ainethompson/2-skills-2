@@ -13,8 +13,17 @@ def count_words(phrase):
     'Hello' and 'hello' are two different words as well.
     """
 
-    # TODO: replace this with your code
+    word_counts = {}
 
+    words = phrase.split(' ')
+
+    for word in words:
+        if word in word_counts:
+            word_counts[word] += 1
+        else:
+            word_counts[word] = 1
+
+    return word_counts
 
 MELONS = [
     ("honeydew", 2.5),
@@ -35,8 +44,16 @@ def get_melons_at_price(price):
     If there are no melons being sold at the given price it returns an
     empty set.
     """
+    # melons_at_price = set()
 
-    # TODO: replace this with your code
+    # for melon in MELONS:
+    #     if melon[1] == price:
+    #         melons_at_price.add(melon[0])
+
+    melons_at_price = set(melon[0] for melon in MELONS if melon[1] == price)
+
+    return melons_at_price
+
 
 
 ENG_PIRATE_LOOKUP = {
