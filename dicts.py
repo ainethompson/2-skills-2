@@ -15,13 +15,11 @@ def count_words(phrase):
 
     word_counts = {}
 
-    words = phrase.split(' ')
+    for word in phrase.split(' ')
+        if word not in word_counts:
+            word_counts[word] = 0
 
-    for word in words:
-        if word in word_counts:
-            word_counts[word] += 1
-        else:
-            word_counts[word] = 1
+        word_counts[word] += 1
 
     return word_counts
 
@@ -84,8 +82,17 @@ def translate_to_pirate_talk(phrase):
     and will only consist of lowercased letters.
     """
 
-    # TODO: replace this with your code
+    new_phrase = []
 
+    for word in phrase.split(' '):
+        new_phrase.append(ENG_PIRATE_LOOKUP.get(word, word))
+        
+        # if word in ENG_PIRATE_LOOKUP:
+        #     new_phrase.append(ENG_PIRATE_LOOKUP[word])
+        # else:
+        #     new_phrase.append(word)
+
+    return ' '.join(new_phrase)
 
 def create_word_chain(words):
     """Return a sequence of words arranged according to the rules below.
@@ -117,7 +124,30 @@ def create_word_chain(words):
     words or it can't find words that'll fit the pattern.
     """
 
-    # TODO: replace this with your code
+    word_chains = {}
+
+    word_1 = words[0]
+
+    new_phrase = [word_1]
+
+
+# get first word
+# add to new phrase
+# get last letter of first word
+# find first word in phrase that starts with that letter
+# add that word to new phrase
+# get last letter of that word
+# repeat
+
+
+
+
+
+
+
+
+
+    for word in words:
 
 
 if __name__ == "__main__":
